@@ -26,7 +26,7 @@ jobs:
         run: snyk auth ${{ secrets.SNYK_TOKEN }}
 
       - name: Run Snyk Open Source (SCA  in Audit Mode)
-        run: snyk test --all-projects --org=1047f1f4-2b85-412a-9844-faac83a1207b
+        run: snyk test -d --all-projects --org=1047f1f4-2b85-412a-9844-faac83a1207b --file=./build.gradle
 
       - name: Run Snyk Code (SAST in Audit Mode)
         run: snyk code test
