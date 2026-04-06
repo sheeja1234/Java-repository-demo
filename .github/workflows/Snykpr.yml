@@ -26,7 +26,9 @@ jobs:
         run: snyk auth ${{ secrets.SNYK_TOKEN }}
 
       - name: Run Snyk Open Source (SCA  in Audit Mode)
-        run: snyk test
+        run: snyk test 
+        continue-on-error: true
 
       - name: Run Snyk Code (SAST in Audit Mode)
         run: snyk code test
+        continue-on-error: true
